@@ -38,7 +38,7 @@ DROP TABLE IF EXISTS `hemlock_user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `hemlock_user` (
   `username` varchar(75) COLLATE utf8_bin NOT NULL,
-  `password` char(100) COLLATE utf8_bin NOT NULL,
+  `password` char(60) COLLATE utf8_bin NOT NULL,
   `name` varchar(100) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -52,7 +52,7 @@ DROP TABLE IF EXISTS `hemlock_user_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `hemlock_user_role` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `role_name` varchar(50) COLLATE utf8_bin NOT NULL,
   `username` varchar(75) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`),
@@ -61,7 +61,7 @@ CREATE TABLE `hemlock_user_role` (
   KEY `role_name` (`role_name`),
   CONSTRAINT `FK_hemlock_user_role_hemlock_role` FOREIGN KEY (`role_name`) REFERENCES `hemlock_role` (`role_name`),
   CONSTRAINT `FK_hemlock_user_role_hemlock_user` FOREIGN KEY (`username`) REFERENCES `hemlock_user` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

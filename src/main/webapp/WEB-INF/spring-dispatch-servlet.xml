@@ -42,9 +42,6 @@
 
 	<bean id="mainController" class="com.twistlet.hemlock.controller.MainController">
 		<constructor-arg>
-			<ref bean="securityContextService" />
-		</constructor-arg>
-		<constructor-arg>
 			<util:map id="welcomePageMap">
 				<!-- Order is important, first match will be used -->
 				<entry key="ROLE_ADMIN" value="redirect:/admin/index" />

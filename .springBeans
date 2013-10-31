@@ -8,7 +8,23 @@
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
 		<config>src/main/resources/hemlock-context-security.xml</config>
+		<config>src/main/resources/hemlock-context-jpa.xml</config>
+		<config>src/main/resources/hemlock-context-config.xml</config>
+		<config>src/main/webapp/WEB-INF/spring-dispatch-servlet.xml</config>
 	</configs>
 	<configSets>
+		<configSet>
+			<name><![CDATA[config]]></name>
+			<allowBeanDefinitionOverriding>true</allowBeanDefinitionOverriding>
+			<incomplete>false</incomplete>
+			<configs>
+				<config>src/main/resources/hemlock-context-jpa.xml</config>
+				<config>src/main/resources/hemlock-context-security.xml</config>
+				<config>src/main/resources/hemlock-context-config.xml</config>
+				<config>src/main/webapp/WEB-INF/spring-dispatch-servlet.xml</config>
+			</configs>
+			<profiles>
+			</profiles>
+		</configSet>
 	</configSets>
 </beansProjectDescription>

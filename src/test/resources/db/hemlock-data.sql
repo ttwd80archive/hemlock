@@ -21,6 +21,7 @@
 LOCK TABLES `hemlock_role` WRITE;
 /*!40000 ALTER TABLE `hemlock_role` DISABLE KEYS */;
 INSERT INTO `hemlock_role` (`role_name`, `role_description`) VALUES ('ROLE_ADMIN','Administrator');
+INSERT INTO `hemlock_role` (`role_name`, `role_description`) VALUES ('ROLE_USER','User');
 /*!40000 ALTER TABLE `hemlock_role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -31,6 +32,7 @@ UNLOCK TABLES;
 LOCK TABLES `hemlock_user` WRITE;
 /*!40000 ALTER TABLE `hemlock_user` DISABLE KEYS */;
 INSERT INTO `hemlock_user` (`username`, `password`, `name`) VALUES ('admin','$2a$10$DCD3My32T23h0lLSXHRzA.RG4/TrIEUfBHKF6hBQfUmXJaiZxDQby','Administrator');
+INSERT INTO `hemlock_user` (`username`, `password`, `name`) VALUES ('user01','$2a$10$cLDgv.Sis/mmHQz1.fv6cOVAkmqe3i14J5bP7O8OCJhjCOKKCmtNG','User 01');
 /*!40000 ALTER TABLE `hemlock_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -41,6 +43,7 @@ UNLOCK TABLES;
 LOCK TABLES `hemlock_user_role` WRITE;
 /*!40000 ALTER TABLE `hemlock_user_role` DISABLE KEYS */;
 INSERT INTO `hemlock_user_role` (`id`, `role_name`, `username`) VALUES (1,'ROLE_ADMIN','admin');
+INSERT INTO `hemlock_user_role` (`id`, `role_name`, `username`) VALUES (2,'ROLE_USER','user01');
 /*!40000 ALTER TABLE `hemlock_user_role` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

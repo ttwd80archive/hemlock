@@ -4,6 +4,8 @@ package com.twistlet.hemlock.model.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,28 +22,27 @@ import javax.persistence.UniqueConstraint;
 public class HemlockUserRole  implements java.io.Serializable {
 
 
-     private long id;
+     private Long id;
      private HemlockUser hemlockUser;
      private HemlockRole hemlockRole;
 
     public HemlockUserRole() {
     }
 
-    public HemlockUserRole(long id, HemlockUser hemlockUser, HemlockRole hemlockRole) {
-       this.id = id;
+    public HemlockUserRole(HemlockUser hemlockUser, HemlockRole hemlockRole) {
        this.hemlockUser = hemlockUser;
        this.hemlockRole = hemlockRole;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="id", unique=true, nullable=false)
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
     
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

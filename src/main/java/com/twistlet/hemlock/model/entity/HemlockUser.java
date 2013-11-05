@@ -53,7 +53,7 @@ public class HemlockUser  implements java.io.Serializable {
     }
 
     
-    @Column(name="password", nullable=false, length=100)
+    @Column(name="password", nullable=false, length=60)
     public String getPassword() {
         return this.password;
     }

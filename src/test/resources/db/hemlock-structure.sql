@@ -19,6 +19,34 @@
 -- Table structure for table `hemlock_role`
 --
 
+# Dump of table hemlock_id_type
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `hemlock_id_type`;
+
+CREATE TABLE `hemlock_id_type` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table hemlock_patient
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `hemlock_patient`;
+
+CREATE TABLE `hemlock_patient` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id_no` varchar(15) DEFAULT NULL,
+  `id_type` int(11) unsigned DEFAULT NULL,
+  `birth_date` date DEFAULT NULL,
+  `contact_no` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_type` (`id_type`),
+  CONSTRAINT `hemlock_patient_ibfk_1` FOREIGN KEY (`id_type`) REFERENCES `hemlock_id_type` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 DROP TABLE IF EXISTS `hemlock_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;

@@ -1,22 +1,22 @@
 package com.twistlet.hemlock.model.entity;
 
-import static com.mysema.query.types.PathMetadataFactory.*;
+import static com.querydsl.core.types.PathMetadataFactory.*;
 
-import com.mysema.query.types.path.*;
+import com.querydsl.core.types.dsl.*;
 
-import com.mysema.query.types.PathMetadata;
-import javax.annotation.Generated;
-import com.mysema.query.types.Path;
-import com.mysema.query.types.path.PathInits;
+import com.querydsl.core.types.PathMetadata;
+import javax.annotation.processing.Generated;
+import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
  * QHemlockUserRole is a Querydsl query type for HemlockUserRole
  */
-@Generated("com.mysema.query.codegen.EntitySerializer")
+@Generated("com.querydsl.codegen.DefaultEntitySerializer")
 public class QHemlockUserRole extends EntityPathBase<HemlockUserRole> {
 
-    private static final long serialVersionUID = -32931914;
+    private static final long serialVersionUID = -32931914L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
@@ -33,18 +33,18 @@ public class QHemlockUserRole extends EntityPathBase<HemlockUserRole> {
     }
 
     public QHemlockUserRole(Path<? extends HemlockUserRole> path) {
-        this(path.getType(), path.getMetadata(), path.getMetadata().isRoot() ? INITS : PathInits.DEFAULT);
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public QHemlockUserRole(PathMetadata<?> metadata) {
-        this(metadata, metadata.isRoot() ? INITS : PathInits.DEFAULT);
+    public QHemlockUserRole(PathMetadata metadata) {
+        this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public QHemlockUserRole(PathMetadata<?> metadata, PathInits inits) {
+    public QHemlockUserRole(PathMetadata metadata, PathInits inits) {
         this(HemlockUserRole.class, metadata, inits);
     }
 
-    public QHemlockUserRole(Class<? extends HemlockUserRole> type, PathMetadata<?> metadata, PathInits inits) {
+    public QHemlockUserRole(Class<? extends HemlockUserRole> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.hemlockRole = inits.isInitialized("hemlockRole") ? new QHemlockRole(forProperty("hemlockRole")) : null;
         this.hemlockUser = inits.isInitialized("hemlockUser") ? new QHemlockUser(forProperty("hemlockUser")) : null;

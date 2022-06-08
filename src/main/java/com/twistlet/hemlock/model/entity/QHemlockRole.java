@@ -1,22 +1,22 @@
 package com.twistlet.hemlock.model.entity;
 
-import static com.mysema.query.types.PathMetadataFactory.*;
+import static com.querydsl.core.types.PathMetadataFactory.*;
 
-import com.mysema.query.types.path.*;
+import com.querydsl.core.types.dsl.*;
 
-import com.mysema.query.types.PathMetadata;
-import javax.annotation.Generated;
-import com.mysema.query.types.Path;
-import com.mysema.query.types.path.PathInits;
+import com.querydsl.core.types.PathMetadata;
+import javax.annotation.processing.Generated;
+import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
  * QHemlockRole is a Querydsl query type for HemlockRole
  */
-@Generated("com.mysema.query.codegen.EntitySerializer")
+@Generated("com.querydsl.codegen.DefaultEntitySerializer")
 public class QHemlockRole extends EntityPathBase<HemlockRole> {
 
-    private static final long serialVersionUID = 438546379;
+    private static final long serialVersionUID = 438546379L;
 
     public static final QHemlockRole hemlockRole = new QHemlockRole("hemlockRole");
 
@@ -34,7 +34,7 @@ public class QHemlockRole extends EntityPathBase<HemlockRole> {
         super(path.getType(), path.getMetadata());
     }
 
-    public QHemlockRole(PathMetadata<?> metadata) {
+    public QHemlockRole(PathMetadata metadata) {
         super(HemlockRole.class, metadata);
     }
 
